@@ -1,7 +1,7 @@
 // Add imports above this line
 import { galleryItems } from './gallery-items';
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
+
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 // Change code below this line
@@ -16,33 +16,11 @@ gallery.insertAdjacentHTML("beforeend", markup);
 gallery.addEventListener("click", onGalleryImgClick)
 
 function createImgMarkup(galleryItems) { 
-//     return galleryItems.map(({ preview, original, description }) => { 
-//         return `<a class="gallery__item" href="${original}">
-//   <img class="gallery__image" src="${preview}" alt="${description}" />
-// </a>`
-//     }).join("")
-    
+
     return galleryItems.reduce((acc, { preview, original, description } ) => {return acc + `<a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}" />
  </a> ` }, '')
-    
-    // const items = [];
-    // galleryItems.forEach(el => { 
-       
-    //     const a = document.createElement('a');
-    //     const img = document.createElement('img');
-    //     a.append(img);
-    //     a.classList.add('gallery__item');
-    //     a.href = el.original;
-    //     img.classList.add('gallery__image');
-    //     img.src = el.preview;
-    //     img.alt = el.description;
-       
-    //     items.push(a);
-     
-       
-    // })
-    // gallery.append(...items)
+
 
 }
 
