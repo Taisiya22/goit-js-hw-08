@@ -12,7 +12,7 @@ form.addEventListener('input', throttle(onFormInput, 500));
 
 populateFormdata() ;
 
-const formData = {};
+const formData = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
 
 
 function onFormSubmit(e) { 
@@ -33,16 +33,11 @@ function populateFormdata() {
     const savedMessage = localStorage.getItem(STORAGE_KEY);
     const savedMessageParse = JSON.parse(savedMessage);
     
-   
     if (savedMessageParse) { 
-        emailInput.value = savedMessageParse.email;
-        messageInput.value = savedMessageParse.message;    
+        emailInput.value = savedMessageParse.email || '';
+        messageInput.value = savedMessageParse.message || '';    
     }
 }
  
 
-// form.addEventListener('input', (e) => { 
-//     // console.log(e.target.name);
-//     // console.log(e.target.value)
-// })
-
+ 
