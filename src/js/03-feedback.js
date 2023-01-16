@@ -28,7 +28,7 @@ function onFormInput(e) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(formData))
     
 }
-
+ 
 function populateFormdata() {
     const savedMessage = localStorage.getItem(STORAGE_KEY);
     const savedMessageParse = JSON.parse(savedMessage);
